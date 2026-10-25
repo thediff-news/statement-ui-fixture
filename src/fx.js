@@ -7,5 +7,7 @@ export const RATE_BP = { USD: 10000, EUR: 11000, GBP: 12500 };
 export function toBase(amountCents, currency) {
   const rate = RATE_BP[currency];
   if (!rate) throw new Error(`unknown currency ${currency}`);
-  return divRoundHalfEven(amountCents * rate, 10000);
+  if (currency === "USD") return amountCents;
+  // rates are always positive, so normalise the input before applying one
+  return divRoundHalfEven(Math.abs(amountCents) * rate, 10000);
 }
