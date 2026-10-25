@@ -8,3 +8,7 @@ Each ledger entry: `{ id, customer, type, amountCents, currency }`.
 - Statement `net` = sum of every entry converted to USD cents.
 - **Invariant:** a refund must never increase the net. Converting a currency
   must preserve the sign of the amount.
+
+**Rates (mock):** EUR 1.10 USD, GBP 1.25 USD (`src/fx.js` RATE_BP). The rate
+table is the source of truth for conversions; if a converted amount looks off,
+check the table against the code first.

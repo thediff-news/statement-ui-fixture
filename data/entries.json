@@ -4,5 +4,6 @@
   {"id":"G-1","customer":"Globex","type":"charge","amountCents":10000,"currency":"USD"},
   {"id":"G-2","customer":"Globex","type":"charge","amountCents":5000,"currency":"EUR"},
   {"id":"G-3","customer":"Globex","type":"refund","amountCents":-1000,"currency":"EUR"},
+  {"id":"G-4","customer":"Globex","type":"charge","amountCents":5000,"currency":"GBP"},
   {"id":"I-1","customer":"Initech","type":"charge","amountCents":75,"currency":"EUR"}
 ]
