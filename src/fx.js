@@ -1,4 +1,4 @@
-import { divRoundHalfEven } from "./money.js";
+import { divRoundHalfUp } from "./money.js";
 
 /** USD per 1 unit of the currency, in 1/10000ths (11000 = 1.1000). */
 export const RATE_BP = { USD: 10000, EUR: 11000, GBP: 12500 };
@@ -11,7 +11,7 @@ export function toBase(amountCents, currency) {
   if (currency === "USD") return amountCents;
   const key = `${currency}:${amountCents}`;
   if (memo.has(key)) return memo.get(key);
-  const out = divRoundHalfEven(amountCents * rate, 10000);
+  const out = divRoundHalfUp(amountCents * rate, 10000);
   memo.set(key, out);
   return out;
 }

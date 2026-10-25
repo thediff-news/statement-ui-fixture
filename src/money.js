@@ -10,6 +10,12 @@ export function divRoundHalfEven(num, den) {
   return sign * out;
 }
 
+/** Divide an integer numerator by an integer denominator, rounding half up. */
+export function divRoundHalfUp(num, den) {
+  const sign = num < 0 ? -1 : 1;
+  return sign * Math.floor((Math.abs(num) * 2 + den) / (2 * den));
+}
+
 export function formatMoney(cents) {
   const sign = cents < 0 ? "-" : "";
   const abs = Math.abs(cents);
