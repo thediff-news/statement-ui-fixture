@@ -9,8 +9,9 @@ export function toBase(amountCents, currency) {
   const rate = RATE_BP[currency];
   if (!rate) throw new Error(`unknown currency ${currency}`);
   if (currency === "USD") return amountCents;
-  if (memo.has(amountCents)) return memo.get(amountCents);
+  const key = `${currency}:${amountCents}`;
+  if (memo.has(key)) return memo.get(key);
   const out = divRoundHalfEven(amountCents * rate, 10000);
-  memo.set(amountCents, out);
+  memo.set(key, out);
   return out;
 }
