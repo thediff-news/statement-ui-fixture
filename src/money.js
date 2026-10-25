@@ -1,5 +1,5 @@
 /** Divide an integer numerator by an integer denominator, rounding half to even
- * (banker's rounding). This is the documented policy: see docs/ROUNDING.md. */
+ * (banker's rounding). Documented policy: see docs/ROUNDING.md and issue #1. */
 export function divRoundHalfEven(num, den) {
   const sign = num < 0 ? -1 : 1;
   const n = Math.abs(num);
